@@ -12,6 +12,9 @@ namespace coderandom
     {
         static Random random = new Random();
         static string[] sname = { ", " };
+        static string[] relas = File.ReadAllText(@"D:\211\DB\lab\BTL2\coderandom\quanhe.txt").Split(sname, StringSplitOptions.RemoveEmptyEntries);
+        static string[] jobs = File.ReadAllText(@"D:\211\DB\lab\BTL2\coderandom\nghenghiep.txt").Split(sname, StringSplitOptions.RemoveEmptyEntries);
+        static string[] pnumbers = File.ReadAllText(@"D:\211\DB\lab\BTL2\coderandom\dausodt.txt").Split(sname, StringSplitOptions.RemoveEmptyEntries);
         static string[] fnames = File.ReadAllText(@"D:\211\DB\lab\BTL2\coderandom\ten.txt").Split(sname, StringSplitOptions.RemoveEmptyEntries);
         static string[] lnames = File.ReadAllText(@"D:\211\DB\lab\BTL2\coderandom\ho.txt").Split(sname, StringSplitOptions.RemoveEmptyEntries);
         private static readonly string[] VietnameseSigns = File.ReadAllText(@"D:\211\DB\lab\BTL2\coderandom\codau.txt").Split(sname, StringSplitOptions.RemoveEmptyEntries);
@@ -136,7 +139,7 @@ namespace coderandom
             catch { }
             return ww + " - " + dd + " - " + pp;
         }
-        static string randomAddress2()
+        static string randomAddress2() // o tphcm
         {
             string pp = "", dd = "", ww = "";
             try
@@ -208,24 +211,110 @@ namespace coderandom
             oXl.Quit();
         }
 
+        static string randomPNumber()
+        {
+            string sdt = "'";
+            int n = random.Next(0, pnumbers.Length);
+            sdt += pnumbers[n];
+            for (int i = 0; i < 7; i++)
+            {
+                n = random.Next(0, 10);
+                sdt += n.ToString();
+            }
+            return sdt;
+        }
+
+        static string randomJob()
+        {
+            int n = random.Next(0, jobs.Length);
+            return jobs[n];
+        }
+
+        static string randomRelation()
+        {
+            int n = random.Next(0, relas.Length);
+            return relas[n];
+        }
+
         static void randomPN()
         {
             object misvalue = System.Reflection.Missing.Value;
             Application oXl = new Application();
             // Workbook oWb = oXl.Workbooks.Add();
             Workbook oWb = oXl.Workbooks.Open(@"D:\211\DB\lab\BTL2\coderandom\Sinhvien.xlsx");
-            Worksheet oWs = (Worksheet)oWb.Worksheets.Item[1];
+            Worksheet oWs = (Worksheet)oWb.Worksheets.Item[3];
             Worksheet oWs2 = (Worksheet)oWb.Worksheets.Item[2];
 
+            oWs2.Cells[1, 1] = "MSSV";
+            oWs2.Cells[1, 2] = "Phone Number";
+
+            int index = 2;
+            for (int i = 2; i < 502; i++)
+            {
+                int mssv = Convert.ToInt32((oWs.Cells[i, 1] as Range).Value2.ToString());
+
+                int n = random.Next(1, 4);
+                for (int j = 0; j < n; j++)
+                {
+                    oWs2.Cells[index, 1] = mssv.ToString();
+                    oWs2.Cells[index, 2] = randomPNumber();
+                    index++;
+                }
+
+                Console.WriteLine(i);
+            }
 
             oWb.Save();
             oWb.Close(true, misvalue, misvalue);
             oXl.Quit();
         }
+
+        static void randomNgThan()
+        {
+            object misvalue = System.Reflection.Missing.Value;
+            Application oXl = new Application();
+            // Workbook oWb = oXl.Workbooks.Add();
+            Workbook oWb = oXl.Workbooks.Open(@"D:\211\DB\lab\BTL2\coderandom\Sinhvien.xlsx");
+            Worksheet oWs = (Worksheet)oWb.Worksheets.Item[3];
+            Worksheet oWs2 = (Worksheet)oWb.Worksheets.Item[1];
+
+            // oWs2.Cells[1, 1] = "MSSV";
+            // oWs2.Cells[1, 2] = "Name";
+            // oWs2.Cells[1, 3] = "Job";
+            // oWs2.Cells[1, 4] = "Phone Number";
+            // oWs2.Cells[1, 5] = "Relationship";
+            // oWs2.Cells[1, 6] = "Address";
+
+            int index = 448;
+            for (int i = 298; i < 502; i++)
+            {
+                int mssv = Convert.ToInt32((oWs.Cells[i, 1] as Range).Value2.ToString());
+
+                int n = random.Next(1, 3);
+                for (int j = 0; j < n; j++)
+                {
+                    oWs2.Cells[index, 1] = mssv.ToString();
+                    oWs2.Cells[index, 2] = randomLname() + " " + randomFname();
+                    oWs2.Cells[index, 3] = randomJob();
+                    oWs2.Cells[index, 4] = randomPNumber();
+                    oWs2.Cells[index, 5] = randomRelation();
+                    oWs2.Cells[index, 6] = randomAddress1();
+                    index++;
+                }
+
+                Console.WriteLine(i);
+            }
+
+            oWb.Save();
+            oWb.Close(true, misvalue, misvalue);
+            oXl.Quit();
+        }
+
         static void Main(string[] args)
         {
             // randomSinhvien();
-            randomPN();
+            // randomPN();
+            randomNgThan();
         }
     }
 }
