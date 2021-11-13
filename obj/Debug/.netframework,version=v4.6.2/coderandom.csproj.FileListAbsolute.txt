@@ -1,0 +1,13 @@
+D:\211\DB\lab\BTL2\coderandom\bin\Debug\.netframework,version=v4.6.2\coderandom.exe.config
+D:\211\DB\lab\BTL2\coderandom\bin\Debug\.netframework,version=v4.6.2\coderandom.exe
+D:\211\DB\lab\BTL2\coderandom\bin\Debug\.netframework,version=v4.6.2\coderandom.pdb
+D:\211\DB\lab\BTL2\coderandom\bin\Debug\.netframework,version=v4.6.2\Microsoft.Office.Interop.Excel.dll
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.csproj.AssemblyReference.cache
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.GeneratedMSBuildEditorConfig.editorconfig
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.AssemblyInfoInputs.cache
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.AssemblyInfo.cs
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.csproj.CoreCompileInputs.cache
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.csproj.CopyComplete
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.exe
+D:\211\DB\lab\BTL2\coderandom\obj\Debug\.netframework,version=v4.6.2\coderandom.pdb
+D:\211\DB\lab\BTL2\coderandom\bin\Debug\.netframework,version=v4.6.2\Newtonsoft.Json.dll

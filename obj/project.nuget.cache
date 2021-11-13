@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "P9GW5Bg2cXzjaMzsO/HIgITKgaAS6YGP/Xk1/Odx+3iZpIU4+LgBcnMkCj52z2ODvl6mi5t5PN7CtsQohQOb5w==",
+  "success": true,
+  "projectFilePath": "D:\\211\\DB\\lab\\BTL2\\coderandom\\coderandom.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Vanh\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\Vanh\\.nuget\\packages\\microsoft.netframework.referenceassemblies\\1.0.0\\microsoft.netframework.referenceassemblies.1.0.0.nupkg.sha512",
+    "C:\\Users\\Vanh\\.nuget\\packages\\microsoft.netframework.referenceassemblies.net462\\1.0.0\\microsoft.netframework.referenceassemblies.net462.1.0.0.nupkg.sha512",
+    "C:\\Users\\Vanh\\.nuget\\packages\\microsoft.office.interop.excel\\15.0.4795.1000\\microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512",
+    "C:\\Users\\Vanh\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}
